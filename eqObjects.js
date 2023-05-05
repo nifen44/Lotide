@@ -12,9 +12,6 @@ const eqObjects = function (object1, object2) {
   const objArr1 = Object.entries(object1);
   const objArr2 = Object.entries(object2);
 
-  // console.log(objArr1);
-  // console.log(objArr2);
-
   let isSame = false;
   if (objArr1.length == objArr2.length) {
     objArr1.forEach((ele) => {

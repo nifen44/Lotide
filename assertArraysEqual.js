@@ -1,17 +1,8 @@
 // FUNCTION IMPLEMENTATION
-const assertion = function (array1, array2) {
-  const compareResult = true;
+const eqArrays = require('./eqArray1');
 
-  if (array1.length !== array2.length) {
-    compareResult = false;
-  } else {
-    for (let i = 0; i < array1.length; i++) {
-      if (array1[i] !== array2[i]) {
-        compareResult = false;
-        break;
-      }
-    }
-  }
+const assertArraysEqual = function (array1, array2) {
+  let compareResult = eqArrays(array1,array2);
 
   if (compareResult) {
     console.log(`😄😄😄Assertion Passed: ${array1} === ${array2}`);
@@ -20,5 +11,8 @@ const assertion = function (array1, array2) {
   }
 };
 
-const args = process.argv.slice(2);
-assertion(args[0], args[1]);
+// const args = process.argv.slice(2);
+// assertArraysEqual(args[0], args[1]);
+
+module.exports = assertArraysEqual;
+
